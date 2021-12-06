@@ -29,10 +29,8 @@ Prerequisites -
    1. `virtualenv -p /path/to/python_bin venv`
    2. `source venv/bin/activate`
    3. `pip install requirements.txt`
-5. Migrate db_schema, pre-seed cities
-   1. `python -m app.db_migration`
-   2. `psql -d car-db < app/database/city.sql`
-6. Start the API, CELERY Worker and Beat
+
+5. Start the API, CELERY Worker and Beat
    1. `honcho start web worker cron`
 
 
