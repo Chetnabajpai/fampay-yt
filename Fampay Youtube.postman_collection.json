@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "9f4df3f8-7add-4c8b-89d5-83a61f635054",
+		"name": "Fampay Youtube",
+		"description": "This collection stores all APIs that are in the Youtube app.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://0.0.0.0:8000/search-videos?title= delhi&description=india",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"sqrrl_last_job_url\", postman.getResponseHeader(\"Location\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "API-key",
+						"value": "aa"
+					},
+					{
+						"key": "x-debug-id",
+						"value": "336",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": 4,\n\t\"total_target_amount\": 50000,\n\t\"target_completion_on\": \"2019-10-10\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/search-videos?title= delhi&description=india",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"search-videos"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": " delhi"
+						},
+						{
+							"key": "description",
+							"value": "india"
+						}
+					]
+				},
+				"description": "[GET] - Get request to get cities based on title and description keywords."
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8000/videos?page=1&limit=5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"sqrrl_last_job_url\", postman.getResponseHeader(\"Location\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "API-key",
+						"value": "aa"
+					},
+					{
+						"key": "x-debug-id",
+						"value": "336",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": 4,\n\t\"total_target_amount\": 50000,\n\t\"target_completion_on\": \"2019-10-10\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/videos?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"videos"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				},
+				"description": "[GET] - This returns the videos stored in the Database in the descending order of published on date."
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8000/search-videos?title=tea",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"sqrrl_last_job_url\", postman.getResponseHeader(\"Location\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "API-key",
+						"value": "aa"
+					},
+					{
+						"key": "x-debug-id",
+						"value": "336",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": 4,\n\t\"total_target_amount\": 50000,\n\t\"target_completion_on\": \"2019-10-10\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/search-videos?title=tea",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"search-videos"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "tea"
+						}
+					]
+				},
+				"description": "[GET] - Search videos based on title only"
+			},
+			"response": []
+		}
+	]
+}

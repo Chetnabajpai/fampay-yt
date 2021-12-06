@@ -37,5 +37,5 @@ Prerequisites -
 
 
 #NOTES
-1. For API specifications refer `Fampay-youtube.postman_collection.json`
+1. For API specifications refer `Fampay Youtube.postman_collection.json`
 
