@@ -35,3 +35,4 @@ def init_session():
 
 # redis session
 rdb = redis.Redis.from_url(config.REDIS_URL)
+rdb.lpush('YOUTUBE_API_KEYS', *['AIzaSyAYnVLUBaG7wK5G8KM3qu06IPkH-siSR3U', 'AIzaSyAqIPxzaYBy9NW7LhWHZj0rkZpiGa8fLoM'])

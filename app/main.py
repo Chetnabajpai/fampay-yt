@@ -6,6 +6,8 @@ import rapidjson
 
 from app.database import db_session, init_session
 from app.middleware import JSONMiddleware, SessionMiddleware
+
+from app.resources.___init__ import VideoResource, VideoSearchResource, RootResource
 from app.log import get_logger
 LOG = get_logger()
 
@@ -28,5 +30,9 @@ app = falcon.App(middleware=[
 
 app.req_options.media_handlers.update(extra_handlers)
 app.resp_options.media_handlers.update(extra_handlers)
+
+app.add_route('/', RootResource())
+app.add_route('/videos', VideoResource())
+app.add_route('/search-videos', VideoSearchResource())
 
 LOG.info('API server started')
